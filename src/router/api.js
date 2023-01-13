@@ -2,7 +2,9 @@ import express from "express";
 import homeController from "../controller/homeController";
 import bannerController from "../controller/bannerController";
 import categoryController from "../controller/categoryController";
-import productController from "../controller/productController"
+import productController from "../controller/productController";
+import blogController from "../controller/blogController";
+import userController from "../controller/userController";
 
 let router = express.Router();
 
@@ -39,6 +41,18 @@ let initWebRouter = (app) => {
   router.post("/createPro", productController.postPro);
   router.put("/updatePro", productController.putPro);
   router.delete("/deletePro", productController.deletePro);
+
+  router.get("/blog", blogController.getAllBlog);
+  router.post("/createBlog", blogController.postBlog);
+  router.put("/updateBlog", blogController.putBlog);
+  router.delete("/deleteBlog", blogController.deleteBlog);
+
+  router.get("/user", userController.getAllUser);
+  router.post("/createUser", userController.postUser);
+  router.put("/updateUser", userController.putUser);
+  router.delete("/deleteUser", userController.deleteUser);
+  router.post("/user/login",userController.handleLogin);
+
 
   return app.use("/api/v1", router);
 };
