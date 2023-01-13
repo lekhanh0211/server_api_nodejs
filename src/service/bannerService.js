@@ -79,12 +79,12 @@ let destroyBanner = (bannerId) => {
         await banner.destroy();
         resolve({
           errCode: 0,
-          errMessage: "Xóa người dùng thành công!",
+          errMessage: "Xóa banner thành công!",
         });
       } else {
         resolve({
           errCode: 1,
-          errMessage: "Xóa người dùng thất bại",
+          errMessage: "Xóa banner thất bại",
         });
       }
     } catch (error) {

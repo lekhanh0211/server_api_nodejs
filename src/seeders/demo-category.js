@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert("Category", [
+    return queryInterface.bulkInsert("Categories", [
       {
         name: "Văn phòng phẩm",
         url: "van-phong-pham",
@@ -18,6 +18,6 @@ module.exports = {
     ]);
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Category", null, {});
+    return queryInterface.bulkDelete("Categories", null, {});
   },
 };

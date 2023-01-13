@@ -1,6 +1,9 @@
 import express from "express";
 import homeController from "../controller/homeController";
 import bannerController from "../controller/bannerController";
+import categoryController from "../controller/categoryController";
+import productController from "../controller/productController"
+
 let router = express.Router();
 
 let initWebRouter = (app) => {
@@ -26,6 +29,16 @@ let initWebRouter = (app) => {
   router.post("/createBanner", bannerController.postBanner);
   router.put("/updateBanner", bannerController.putBanner);
   router.delete("/deleteBanner", bannerController.delBanner);
+
+  router.get("/cate", categoryController.getAllCate);
+  router.post("/createCate", categoryController.postCate);
+  router.put("/updateCate", categoryController.putCate);
+  router.delete("/deleteCate", categoryController.delCate);
+
+  router.get("/product", productController.getAllPro);
+  router.post("/createPro", productController.postPro);
+  router.put("/updatePro", productController.putPro);
+  router.delete("/deletePro", productController.deletePro);
 
   return app.use("/api/v1", router);
 };
